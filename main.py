@@ -1,6 +1,8 @@
 from load_data import *
 from class_file import *
 from AW import *
+from APD import *
+
 def print_input(thief):
     print(thief.knapsack.capacity)
     for i in thief.item_list:
@@ -13,3 +15,4 @@ print_input(thief)
 
 
 AW(thief)
+APD(thief)

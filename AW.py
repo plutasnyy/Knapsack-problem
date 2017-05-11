@@ -23,7 +23,7 @@ def AW(thief):
     for i in range(combinations_number):
         X=return_bin(i,quantity_of_items)
         current_value,size=calculate_solution(X,thief)
-        
+
         if current_value > max_value and size<=thief.knapsack.capacity:
             max_value=current_value
             best_solution=X
