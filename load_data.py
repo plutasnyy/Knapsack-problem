@@ -27,12 +27,17 @@ def manual_input():
 
 def load_data():
     try:
-        file=open("data.txt","r")
-        data=plik.read().split("\n")
+        data_file=open("data.txt","r")
+        data=data_file.read().split("\n")
         capacity=int(data[0])
-        item_list=[Item(int(i),int(j)) for i,j in data.split()]
-        file.close()
+
+        data.remove(data[0])
+        if(data[-1]==""):
+            data.remove(data[-1])
+
+        item_list=[Item(int(i),int(j)) for i,k,j in data] #k is null 'a b'
+        data_file.close()
         return capacity,item_list
-        
+
     except FileNotFoundError:
         return  manual_input()
