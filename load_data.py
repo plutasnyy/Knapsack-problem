@@ -35,17 +35,26 @@ def manual_input():
 
     return capacity,item_list
 
+def return_list_from_file(data):
+    temp=[]
+    for i in data:
+        a,b=i.split()
+        temp.append(Item(int(a),int(b)))
+    return temp
+
 def load_data():
     try:
         data_file=open("data.txt","r")
         data=data_file.read().split("\n")
-        capacity=int(data[0])
 
+        capacity=int(data[0])
         data.remove(data[0])
+
         if(data[-1]==""):
             data.remove(data[-1])
 
-        item_list=[Item(int(i),int(j)) for i,k,j in data] #k is null 'a b'
+        item_list=return_list_from_file(data)
+
         data_file.close()
         return capacity,item_list
 

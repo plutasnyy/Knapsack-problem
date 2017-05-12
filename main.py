@@ -6,7 +6,7 @@ from APD import *
 def print_input(thief):
     print(thief.knapsack.capacity)
     for i in thief.item_list:
-        print(i.value,i.size)
+        print(i.size,i.value)
     print()
 
 generate_random_data(10,5)
