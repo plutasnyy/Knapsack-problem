@@ -28,4 +28,4 @@ def AW(thief):
             max_value=current_value
             best_solution=X
 
-    print("Value: ",max_value,"X: ", best_solution)
+    print("Value: {}, X: {}".format(max_value,best_solution))

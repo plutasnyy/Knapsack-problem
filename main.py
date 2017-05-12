@@ -2,6 +2,7 @@ from load_data import *
 from class_file import *
 from AW import *
 from APD import *
+from generate_random_data import *
 
 def print_input(thief):
     print(thief.knapsack.capacity)
