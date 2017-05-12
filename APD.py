@@ -12,16 +12,8 @@ def print_matrix(matrix):
     for i in matrix:
         print(i)
 
-def fill_first_row(matrix,thief):
-    item = thief.item_list[0]
-    for i in range(1,len(matrix[0])):
-        if i < item.size:
-            matrix[1][i]=0
-        else:
-            matrix[1][i]=item.value
-
-def fill_empty_row_in_matrix(matrix,thief):
-    for i in range(1,len(thief.item_list)):
+def fill_empty_rows_in_matrix(matrix,thief):
+    for i in range(len(thief.item_list)):
         item=thief.item_list[i]
         for j in range(len(matrix[1])):
             if j<item.size:
@@ -31,7 +23,5 @@ def fill_empty_row_in_matrix(matrix,thief):
 
 def APD(thief):
     matrix=generate_empty_matrix(thief)
-    fill_first_row(matrix,thief)
-    print_matrix(matrix)
-    fill_empty_row_in_matrix(matrix,thief)
+    fill_empty_rows_in_matrix(matrix,thief)
     print_matrix(matrix)
