@@ -1,4 +1,14 @@
 from class_file import Item
+from random import randint
+
+def generate_random_data(capacity,quantity_of_items):
+    data_file=open("data.txt","w")
+
+    data_file.write(str(capacity))
+    for i in range(quantity_of_items):
+        data_file.write("\n{} {}".format(randint(1,10),randint(1,10)))
+
+    data_file.close()
 
 def input_pair():
     first,second="a a".split()
