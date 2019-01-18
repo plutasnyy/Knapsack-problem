@@ -9,7 +9,7 @@ def print_input(thief):
         print(i.size,i.value)
     print()
 
-generate_random_data(10,5)
+generate_random_data(10,25)
 ruckasck_capacity,items=load_data()
 thief=Thief(Knapsack(ruckasck_capacity),items)
 print_input(thief)
