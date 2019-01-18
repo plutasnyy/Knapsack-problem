@@ -1,20 +1,3 @@
-def return_bin(i, quantity_of_items):
-    number = bin(i)[2:]  # number as binary
-    combination = [0 for i in range(quantity_of_items)]
-    for i in range(len(number)):
-        combination[-i - 1] += int(number[-i - 1])
-    return combination
-
-
-def calculate_solution(X, thief):
-    value = 0
-    size = 0
-    for i in range(len(thief.item_list)):
-        value += thief.item_list[i].value * X[i]
-        size += thief.item_list[i].size * X[i]
-    return value, size
-
-
 def AW(thief):
     for ind, item in enumerate(thief.item_list):
         item.coef = item.value / item.size
